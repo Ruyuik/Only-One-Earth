@@ -34,7 +34,7 @@ public class EarthMovement : MonoBehaviour
         for (int i = 0; i < treeAmount; i++)
         {
             GameObject t = Instantiate(tree, decorsParent);
-            t.transform.eulerAngles = new Vector3(0, 0, Random.RandomRange(0, 360));
+            t.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
             float x, y = 0f;
             y = Mathf.Sin(t.transform.eulerAngles.z * Mathf.PI / 180) * 2.58f;
             x = Mathf.Cos(t.transform.eulerAngles.z * Mathf.PI / 180) * 2.58f;
@@ -45,7 +45,7 @@ public class EarthMovement : MonoBehaviour
         for (int i = 0; i < mountainAmount; i++)
         {
             GameObject m = Instantiate(mountain, decorsParent);
-            m.transform.eulerAngles = new Vector3(0, 0, Random.RandomRange(0, 360));
+            m.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
             float x, y = 0f;
             y = Mathf.Sin(m.transform.eulerAngles.z * Mathf.PI / 180) * 2.58f;
             x = Mathf.Cos(m.transform.eulerAngles.z * Mathf.PI / 180) * 2.58f;
