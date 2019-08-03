@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (Input.GetKeyDown(KeyCode.P) && !lerp)
         {
             TempUp();
@@ -59,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         t += Time.deltaTime;
         thermometre.value = Mathf.Lerp(previousVal, newVal, t);
-        noyau.transform.localScale = Vector3.one * thermometre.value * 5;
+        noyau.transform.localScale = Vector3.one * thermometre.value * 4;
         if (t >= 1)
         {
             lerp = false;

@@ -27,16 +27,6 @@ public class CameraMovement : MonoBehaviour
             cameraZoom = Mathf.Clamp(cameraZoom, -10f, -3f);
         }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null)
-            {
-
-            }
-        }
-
-
         transform.position = new Vector3(0, 0, cameraZoom);
     }
 }
